@@ -1,0 +1,40 @@
+---
+import type { Location } from '@/utils/schema';
+import { DateTime } from 'luxon';
+
+interface AltProps {
+  of: string;
+  now?: Location;
+  next?: Location;
+  in?: string;
+}
+
+const props = Astro.props as AltProps;
+const next =
+  props.next?.country === props.now?.country
+    ? `${props.next?.city}, ${props.next?.countryCode.toLocaleUpperCase()}`
+    : props.next?.country;
+---
+
+<>
+  <div class="font-h1 mt-4 text-lg font-bold">
+    <span class="text-zinc-500 dark:text-zinc-400">
+      {props.of}
+      {' '}
+      is currently in
+      {' '}
+    </span>
+    {
+      props.now !== undefined &&
+        `${props.now?.city.toUpperCase()}, ${props.now?.countryCode.toLocaleUpperCase()}`
+    }
+  </div>
+  {
+    props.in !== undefined && (
+      <div class="font-h1 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
+        Leaving for {next}{' '}
+        {DateTime.fromFormat(props.in, 'yyyy-MM-dd').toRelativeCalendar()}
+      </div>
+    )
+  }
+</>

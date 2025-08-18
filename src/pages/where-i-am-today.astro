@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Location from '@/components/location/Location.astro';
+import LocationSkeleton from '@/components/location/LocationSkeleton.astro';
+
+export const prerender = true;
+---
+
+<Layout>
+  <main
+    class="m-auto mt-8 mb-24 max-w-screen-md object-center px-4 text-center"
+  >
+    <section class="m-auto w-full object-center text-center select-none">
+      <Location server:defer>
+        <LocationSkeleton slot="fallback" />
+      </Location>
+    </section>
+  </main>
+</Layout>

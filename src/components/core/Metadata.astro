@@ -1,0 +1,14 @@
+---
+import { BASE_URL } from 'astro:env/server';
+---
+
+<>
+  <!-- Primary Meta Tags -->
+  <link rel="canonical" href={BASE_URL} />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:url" content={BASE_URL} />
+  <meta property="og:image" content={`${BASE_URL}/logo.webp`} />
+  <!-- Twitter -->
+  <meta name="twitter:url" content={BASE_URL} />
+  <meta name="twitter:image" content={`${BASE_URL}/logo.webp`} />
+</>

@@ -1,0 +1,16 @@
+---
+import Alt from '@/components/location/Alt.astro';
+import Marker from '@/components/location/Marker.astro';
+import TripList from '@/components/location/TripList.astro';
+import { loader } from '@/utils/api';
+import { TITLE } from '@/content/constants';
+
+const { location, trips } = await loader();
+const { now, next } = location;
+---
+
+<section class="m-auto w-full object-center text-center select-none">
+  <Marker thumbnail={now?.thumbnail} />
+  <Alt of={TITLE} now={now} next={next} in={next?.dateStart} />
+  <TripList trips={trips} />
+</section>

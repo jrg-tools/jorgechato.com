@@ -1,0 +1,59 @@
+---
+import { AUTHOR, YEAR_OF_CREATION } from '@/content/constants';
+import { SITE_MAP, SNS } from '@/content/siteMap';
+
+const this_year = new Date().getFullYear();
+---
+
+<footer class="bg-zinc-100/20 select-none dark:bg-zinc-900/30">
+  <div class="mx-auto w-full max-w-screen-xl p-4 px-6 py-6 lg:py-8">
+    <div class="flex flex-row flex-wrap justify-center gap-16 sm:gap-8">
+      <div>
+        <h2 class="mb-6 text-sm font-semibold uppercase">Follow my work at</h2>
+        <ul
+          class="flex flex-col gap-2 font-medium text-zinc-600 dark:text-zinc-400"
+        >
+          {
+            SNS.map((item) => (
+              <li>
+                <a href={item.url} class="duration-300 hover:underline">
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <h2 class="mb-6 text-sm font-semibold uppercase">Site Map</h2>
+        <ul
+          class="flex flex-col gap-2 font-medium text-zinc-600 dark:text-zinc-400"
+        >
+          {
+            SITE_MAP.map((item) => (
+              <li>
+                <a href={item.url} class="duration-300 hover:underline">
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+    <hr
+      class="my-6 border-zinc-200/60 sm:mx-auto lg:my-8 dark:border-zinc-800/60"
+    />
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class="text-sm text-zinc-300 sm:text-center dark:text-zinc-700">
+        &copy;
+        {' '}
+        {AUTHOR}
+        {' '}
+        {YEAR_OF_CREATION < this_year && `${YEAR_OF_CREATION} - `}
+        {this_year}
+        &nbsp;
+      </span>
+    </div>
+  </div>
+</footer>
