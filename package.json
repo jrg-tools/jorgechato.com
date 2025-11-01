@@ -21,7 +21,7 @@
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
     "astro": "^5.13.5",
-    "canvas-confetti": "^1.9.3",
+    "canvas-confetti": "^1.9.4",
     "country-flag-emoji": "^1.0.3",
     "luxon": "^3.7.1",
     "maath": "^0.10.8",
