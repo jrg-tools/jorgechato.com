@@ -57,8 +57,8 @@ importers:
         specifier: ^0.10.8
         version: 0.10.8(@types/three@0.179.0)(three@0.179.1)
       markdown-to-jsx:
-        specifier: ^7.7.17
-        version: 7.7.17(react@19.2.1)
+        specifier: ^9.7.6
+        version: 9.7.6(react@19.2.1)
       mermaid:
         specifier: ^11.12.2
         version: 11.12.2
@@ -3264,13 +3264,22 @@ packages:
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
 
-  markdown-to-jsx@7.7.17:
-    resolution: {integrity: sha512-7mG/1feQ0TX5I7YyMZVDgCC/y2I3CiEhIRQIhyov9nGBP5eoVrOXXHuL5ZP8GRfxVZKRiXWJgwXkb9It+nQZfQ==}
-    engines: {node: '>= 10'}
+  markdown-to-jsx@9.7.6:
+    resolution: {integrity: sha512-oPckbBhWv/d2HmYzSv68g2UBTONmrFYlqUd+juolxTplJImhDEKFgAEcnxSTeZ1HISKzKxm+mVeUYP7OUhglJQ==}
+    engines: {node: '>= 18'}
     peerDependencies:
-      react: '>= 0.14.0'
+      react: '>= 16.0.0'
+      react-native: '*'
+      solid-js: '>=1.0.0'
+      vue: '>=3.0.0'
     peerDependenciesMeta:
       react:
+        optional: true
+      react-native:
+        optional: true
+      solid-js:
+        optional: true
+      vue:
         optional: true
 
   marked@16.4.2:
@@ -8147,7 +8156,7 @@ snapshots:
 
   markdown-table@3.0.4: {}
 
-  markdown-to-jsx@7.7.17(react@19.2.1):
+  markdown-to-jsx@9.7.6(react@19.2.1):
     optionalDependencies:
       react: 19.2.1
 
