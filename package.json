@@ -25,7 +25,7 @@
     "country-flag-emoji": "^1.0.3",
     "luxon": "^3.7.2",
     "maath": "^0.10.8",
-    "markdown-to-jsx": "^7.7.17",
+    "markdown-to-jsx": "^9.7.6",
     "mermaid": "^11.12.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
