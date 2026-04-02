@@ -29,7 +29,7 @@
     "mermaid": "^11.12.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "tailwindcss": "^4.1.17",
+    "tailwindcss": "^4.2.2",
     "three": "^0.179.1"
   },
   "devDependencies": {
