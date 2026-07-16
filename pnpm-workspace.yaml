@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  unrs-resolver: false
+minimumReleaseAgeExclude:
+  - electron-to-chromium
+  - prettier-plugin-tailwindcss

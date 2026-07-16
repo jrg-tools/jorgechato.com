@@ -1,12 +1,12 @@
 # Base image with Node.js and pnpm
-FROM node:lts-alpine AS base
+FROM node:26-alpine AS base
+RUN npm install -g pnpm@11
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Install only production dependencies
 FROM base AS prod-deps
@@ -23,7 +23,7 @@ COPY . .
 RUN pnpm run build
 
 # Production image
-FROM node:lts-alpine AS runtime
+FROM node:26-alpine AS runtime
 
 WORKDIR /app
 
